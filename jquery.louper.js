@@ -10,7 +10,7 @@
 			background: 'black',
 			trigger: 'hover',
 			style: 'offset'
-		}, options);
+		}, options || {});
 
 		var radius = options.size / 2,
 			active = false,
