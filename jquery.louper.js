@@ -87,8 +87,9 @@
 				xOffset = -((x * magW) - radius),
 				yOffset = -((y * magH) - radius);
 
+			bg.css('backgroundImage') === 'none' && bg.css('backgroundImage', 'url(' + ( $(this).data('magnify') || this.src ) + ')');
+
 			bg.css({
-				backgroundImage: 'url(' + ( $(this).data('magnify') || this.src ) + ')',
 				backgroundPosition: xOffset + 'px ' + yOffset + 'px',
 				backgroundSize: magW + 'px ' + magH + 'px'
 			});
