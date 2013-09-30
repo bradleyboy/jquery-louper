@@ -86,7 +86,7 @@
 				magH = h * options.magnification,
 				xOffset = -((x * magW) - radius),
 				yOffset = -((y * magH) - radius);
-
+				
 			bg.css('backgroundImage') === 'none' && bg.css('backgroundImage', 'url(' + ( $(this).data('magnify') || this.src ) + ')');
 
 			bg.css({
