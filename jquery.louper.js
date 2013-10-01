@@ -64,7 +64,8 @@
 
 		if (options.trigger === 'click') {
 			this.css('cursor', '-webkit-zoom-in');
-			this.on('click', function() {
+			this.on('click', function(e) {
+				e.preventDefault();
 				loupe.toggle();
 				active = !active;
 				$(this).css('cursor', '-webkit-zoom-' + (active ? 'out' : 'in'));
