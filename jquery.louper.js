@@ -64,7 +64,8 @@
 
 		if (options.trigger === 'click') {
 			this.css('cursor', '-webkit-zoom-in');
-			this.on('click', function() {
+			this.on('click', function(e) {
+				e.preventDefault();
 				loupe.toggle();
 				active = !active;
 				$(this).css('cursor', '-webkit-zoom-' + (active ? 'out' : 'in'));
@@ -86,9 +87,10 @@
 				magH = h * options.magnification,
 				xOffset = -((x * magW) - radius),
 				yOffset = -((y * magH) - radius);
+				
+			bg.css('backgroundImage') === 'none' && bg.css('backgroundImage', 'url(' + ( $(this).data('magnify') || this.src ) + ')');
 
 			bg.css({
-				backgroundImage: 'url(' + ( $(this).data('magnify') || this.src ) + ')',
 				backgroundPosition: xOffset + 'px ' + yOffset + 'px',
 				backgroundSize: magW + 'px ' + magH + 'px'
 			});
